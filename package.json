@@ -8,7 +8,12 @@
 		"type": "git",
 		"url": "git+https://github.com/idleberg/loadenv-cli.git"
 	},
-	"keywords": [],
+	"keywords": [
+		"environment variables",
+		"dotenv",
+		"load environment",
+		"vite"
+	],
 	"type": "module",
 	"bin": {
 		"loadenv": "./bin/index.js"
