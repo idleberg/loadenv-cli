@@ -1,1 +1,71 @@
-console.log('Hello, World!');
+#!/usr/bin/env node
+
+import { spawn } from 'node:child_process';
+import { resolve } from 'node:path';
+import { program } from 'commander';
+import { loadEnv } from 'vite';
+import { logger } from './log.ts';
+import { getVersion } from './utils.ts';
+
+program
+	.version(await getVersion())
+	.configureOutput({
+		writeErr: (message: string) => logger.error(message),
+	})
+	.arguments('<command> [args...]')
+	.optionsGroup('Basic loadEnv Options')
+	.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file')
+	.option('-e, --envdir <string>', 'directory to load .env from', process.cwd())
+	.option('-p, --prefix <string...>', 'filter environment variables by prefix', '')
+	.optionsGroup('Advanced Options')
+	.option('-D, --dry-run', 'skip executing the spawned process')
+	.option('-i, --isolate', 'only use environment variables from file', false)
+
+	// This is required to pass on unknown options to the spawned process.
+	.allowUnknownOption(true);
+
+program.parse();
+
+const [command, ...commandArgs] = program.args;
+const options = program.opts();
+
+spawnProcess(command as string, commandArgs);
+
+function spawnProcess(command: string, args: string[] = []) {
+	const env = loadEnv(options.mode, resolve(options.envdir), options.prefix);
+
+	if (options.dryRun) {
+		const fullCommand = args.length ? `${command} ${args.join(' ')}` : command;
+		logger.info(`Dry run, not executing "${fullCommand}"`);
+		return;
+	}
+
+	const environment = options.isolate ? env : { ...process.env, ...env };
+	const child = spawn(command, args, { stdio: 'inherit', env: environment });
+
+	child.on('exit', (exitCode, signal: NodeJS.Signals) => {
+		if (typeof exitCode === 'number') {
+			process.exit(exitCode);
+		}
+
+		logger.info(`Process terminated with ${signal}`);
+		process.kill(process.pid, signal);
+	});
+
+	child.on('error', (error) => logger.error(error.message));
+
+	for (const signal of [
+		'SIGINT',
+		'SIGTERM',
+		'SIGPIPE',
+		'SIGHUP',
+		'SIGBREAK',
+		'SIGWINCH',
+		'SIGUSR1',
+		'SIGUSR2',
+	] as NodeJS.Signals[]) {
+		process.on(signal, () => {
+			child.kill(signal);
+		});
+	}
+}

@@ -1,27 +1,23 @@
 {
-	"name": "node-package-template",
+	"name": "loadenv-cli",
 	"version": "0.0.0",
-	"privatge": true,
-	"description": "Just my personal package template",
+	"description": "Use Vite's `loadEnv` on the command-line",
 	"license": "MIT",
 	"author": "Jan T. Sott",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/idleberg/node-package-template.git"
+		"url": "git+https://github.com/idleberg/loadenv-cli.git"
 	},
 	"keywords": [],
 	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		}
+	"bin": {
+		"loadenv": "./bin/index.js"
 	},
 	"engines": {
 		"node": ">=22"
 	},
 	"files": [
-		"dist/",
+		"bin/",
 		"LICENSE",
 		"README.md"
 	],
@@ -38,7 +34,11 @@
 		"publish:npm": "np --any-branch",
 		"test": "vitest run"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"commander": "^14.0.1",
+		"kleur": "^4.1.5",
+		"vite": "^7.1.11"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
