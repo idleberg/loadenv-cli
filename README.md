@@ -8,6 +8,12 @@
 
 Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child-process with those environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
 
+**Features**
+
+- limit to prefixed environment variables, e.g. `VITE_`
+- expand environment variables
+- isolation of host enviroment variables
+
 ## Installation 💿
 
 ```shell
