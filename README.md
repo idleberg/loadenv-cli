@@ -6,17 +6,15 @@
 [![Version: npm](https://img.shields.io/npm/v/loadenv-cli?style=for-the-badge)](https://www.npmjs.org/package/loadenv-cli)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/loadenv-cli/main?style=for-the-badge)
 
-## Description
+Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child-process with those environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
 
-This package utilizes Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function to load environment variables from a `.env` file and spawn a child-process using these environment variables.
-
-## Installation
+## Installation 💿
 
 ```shell
 npm install loadenv-cli
 ```
 
-## Usage
+## Usage 🚀
 
 > [!TIP]
 > It's recommended to get familiar with Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html) first.
@@ -36,10 +34,10 @@ loadenv --mode production --prefix VITE_ playwright test -- --ui
 
 See `loadenv --help` for all available options.
 
-## Related
+## Related 👫
 
-- [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) - Similar tool for the job
+- [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) - Brother from another mother
 
-## License
+## License ©️
 
 This work is licensed under [The MIT License](LICENSE).
