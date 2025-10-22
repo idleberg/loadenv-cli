@@ -38,7 +38,7 @@ See `loadenv --help` for all available options.
 
 ## Related
 
-[dotenv-cli](https://www.npmjs.com/package/dotenv-cli)
+- [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) - Similar tool for the job
 
 ## License
 
