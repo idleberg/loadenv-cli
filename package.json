@@ -1,6 +1,6 @@
 {
 	"name": "loadenv-cli",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Use Vite's `loadEnv` on the command-line",
 	"license": "MIT",
 	"author": "Jan T. Sott",
