@@ -29,13 +29,13 @@ npm install loadenv-cli
 
 ```sh
 # Use production .env with Playwright
-loadenv --mode production playwright test
+npx loadenv --mode production playwright test
 
 # Only pass prefixed environment variables
-loadenv --mode production --prefix VITE_ playwright test
+npx loadenv --mode production --prefix VITE_ playwright test
 
 # Pass arguments to Playwright
-loadenv --mode production --prefix VITE_ playwright test -- --ui
+npx loadenv --mode production --prefix VITE_ playwright test -- --ui
 ```
 
 See `loadenv --help` for all available options.
