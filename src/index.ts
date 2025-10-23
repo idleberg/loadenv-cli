@@ -20,7 +20,6 @@ program
 	.optionsGroup('Advanced Options')
 	.option('-D, --debug', 'print additional debug output')
 	.option('-R, --dry-run', 'skip executing the spawned process')
-	.option('-i, --isolate', 'only use environment variables from file', false)
 
 	// This is required to pass on unknown options to the spawned process.
 	.allowUnknownOption(true);
@@ -54,8 +53,7 @@ function spawnProcess(command: string, args: string[] = []) {
 		return;
 	}
 
-	const environment = options.isolate ? env : { ...process.env, ...env };
-	const child = spawn(command, args, { stdio: 'inherit', env: environment });
+	const child = spawn(command, args, { stdio: 'inherit', env });
 
 	child.on('exit', (exitCode, signal: NodeJS.Signals) => {
 		if (typeof exitCode === 'number') {

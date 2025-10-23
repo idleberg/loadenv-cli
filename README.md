@@ -13,7 +13,6 @@ Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv)
 - loads `.env` relevant to mode
 - filters prefixed environment variables, e.g. `VITE_`
 - expands environment variables
-- optionally isolates host environment
 
 ## Installation 💿
 
