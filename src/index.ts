@@ -18,7 +18,8 @@ program
 	.option('-e, --envdir <string>', 'directory to load .env from', process.cwd())
 	.option('-p, --prefix <string...>', 'filter environment variables by prefix', '')
 	.optionsGroup('Advanced Options')
-	.option('-D, --dry-run', 'skip executing the spawned process')
+	.option('-D, --debug', 'print additional debug output')
+	.option('-R, --dry-run', 'skip executing the spawned process')
 	.option('-i, --isolate', 'only use environment variables from file', false)
 
 	// This is required to pass on unknown options to the spawned process.
@@ -29,10 +30,23 @@ program.parse();
 const [command, ...commandArgs] = program.args;
 const options = program.opts();
 
+if (options.debug) {
+	logger.debug('CLI', {
+		command,
+		args: commandArgs,
+		options,
+	});
+}
+
 spawnProcess(command as string, commandArgs);
 
 function spawnProcess(command: string, args: string[] = []) {
-	const env = loadEnv(options.mode, resolve(options.envdir), options.prefix);
+	const resolvedEnvDir = resolve(options.envdir);
+	const env = loadEnv(options.mode, resolvedEnvDir, options.prefix);
+
+	if (options.debug) {
+		logger.debug('Environment', env);
+	}
 
 	if (options.dryRun) {
 		const fullCommand = args.length ? `${command} ${args.join(' ')}` : command;
@@ -45,6 +59,10 @@ function spawnProcess(command: string, args: string[] = []) {
 
 	child.on('exit', (exitCode, signal: NodeJS.Signals) => {
 		if (typeof exitCode === 'number') {
+			if (options.debug) {
+				logger.debug('Exit code', exitCode);
+			}
+
 			process.exit(exitCode);
 		}
 
