@@ -23,8 +23,8 @@ npm install loadenv-cli
 
 ## Usage 🚀
 
-> [!TIP]
-> It's recommended to get familiar with Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html) before using the CLI.
+> [!NOTE]
+> Understanding Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html) is expected before you read on.
 
 **Example**
 
