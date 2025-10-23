@@ -1,10 +1,10 @@
 import { bgBlue, bgCyan, bgGreen, bgRed, bgYellow } from 'kleur/colors';
 
 export const logger = {
-	debug: (message: unknown) => console.debug(bgCyan(' DEBUG '), message),
-	error: (message: unknown) => console.error(bgRed(' ERROR '), message),
-	info: (message: unknown) => console.info(bgBlue(' INFO '), message),
-	log: (message: unknown) => console.log(message),
-	success: (message: unknown) => console.log(bgGreen(' SUCCESS '), message),
-	warn: (message: unknown) => console.warn(bgYellow(' WARN '), message),
+	debug: (...args: unknown[]) => console.debug(bgCyan(' DEBUG '), ...args),
+	error: (...args: unknown[]) => console.error(bgRed(' ERROR '), ...args),
+	info: (...args: unknown[]) => console.info(bgBlue(' INFO '), ...args),
+	log: (...args: unknown[]) => console.log(...args),
+	success: (...args: unknown[]) => console.log(bgGreen(' SUCCESS '), ...args),
+	warn: (...args: unknown[]) => console.warn(bgYellow(' WARN '), ...args),
 };
