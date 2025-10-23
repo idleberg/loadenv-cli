@@ -42,21 +42,21 @@
 	"dependencies": {
 		"commander": "^14.0.1",
 		"kleur": "^4.1.5",
-		"vite": "^7.1.11"
+		"vite": "^7.1.12"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
 		"@idleberg/configs": "^0.3.1",
 		"@types/node": "^24.9.0",
-		"@vitest/coverage-v8": "^4.0.1",
+		"@vitest/coverage-v8": "^4.0.2",
 		"concurrently": "^9.2.1",
 		"esbuild": "^0.25.11",
 		"knip": "^5.66.2",
 		"np": "^10.2.0",
 		"publint": "^0.3.15",
 		"tsdown": "^0.15.9",
-		"vitest": "^4.0.1"
+		"vitest": "^4.0.2"
 	},
 	"packageManager": "pnpm@10.18.1+sha512.77a884a165cbba2d8d1c19e3b4880eee6d2fcabd0d879121e282196b80042351d5eb3ca0935fa599da1dc51265cc68816ad2bddd2a2de5ea9fdf92adbec7cd34"
 }
