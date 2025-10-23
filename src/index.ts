@@ -13,7 +13,7 @@ program
 		writeErr: (message: string) => logger.error(message),
 	})
 	.arguments('<command> [args...]')
-	.optionsGroup('Basic loadEnv Options')
+	.optionsGroup('loadEnv API')
 	.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file')
 	.option('-e, --envdir <string>', 'directory to load .env from', process.cwd())
 	.option('-p, --prefix <string...>', 'filter environment variables by prefix', '')
