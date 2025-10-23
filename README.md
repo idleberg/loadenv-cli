@@ -26,7 +26,7 @@ npm install loadenv-cli
 > [!NOTE]
 > Before you read on, make sure you have a basic understanding of Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html).
 
-**Example**
+**Examples**
 
 ```sh
 # Use production .env with Playwright
