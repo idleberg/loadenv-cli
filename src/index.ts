@@ -14,7 +14,7 @@ program
 	})
 	.arguments('<command> [args...]')
 	.optionsGroup('loadEnv API')
-	.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file')
+	.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file', process.env.MODE)
 	.option('-e, --envdir <string>', 'directory to load .env from', process.cwd())
 	.option('-p, --prefix <string...>', 'filter environment variables by prefix', '')
 	.optionsGroup('Advanced Options')
@@ -28,6 +28,10 @@ program.parse();
 
 const [command, ...commandArgs] = program.args;
 const options = program.opts();
+
+if (process.env.MODE === options.mode) {
+	logger.info('Mode has been derived from environment.');
+}
 
 if (options.debug) {
 	logger.debug('CLI', {
