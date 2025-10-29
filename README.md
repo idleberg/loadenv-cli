@@ -42,7 +42,9 @@ See `loadenv --help` for all available options.
 
 ## Related 👫
 
-- [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) - Brother from another mother
+If this project is not for you, maybe these alternatives suit you better:
+
+- [dotenv-cli](https://www.npmjs.com/package/dotenv-cli)
 
 ## License ©️
 
