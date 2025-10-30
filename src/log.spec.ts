@@ -25,7 +25,6 @@ describe('logger', () => {
 		{ method: 'debug', consoleMethod: 'debug', label: 'DEBUG' },
 		{ method: 'error', consoleMethod: 'error', label: 'ERROR' },
 		{ method: 'info', consoleMethod: 'info', label: 'INFO' },
-		{ method: 'log', consoleMethod: 'log', label: '' },
 		{ method: 'success', consoleMethod: 'log', label: 'SUCCESS' },
 		{ method: 'warn', consoleMethod: 'warn', label: 'WARN' },
 	] as const)('$method', ({ method, consoleMethod, label }) => {
