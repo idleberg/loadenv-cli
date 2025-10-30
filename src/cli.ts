@@ -1,3 +1,4 @@
+import process from 'node:process';
 import { Command } from 'commander';
 import { logger } from './log.ts';
 import { getVersion } from './utils.ts';

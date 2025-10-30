@@ -1,5 +1,6 @@
 import { spawn } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
+import process from 'node:process';
 import { loadEnv } from 'vite';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { logger } from './log.ts';

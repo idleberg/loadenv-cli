@@ -1,12 +1,13 @@
 import { spawn } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import process from 'node:process';
 import type { OptionValues } from 'commander';
 import { loadEnv } from 'vite';
 import { logger } from './log.ts';
 
 export async function getVersion(): Promise<string> {
-	const manifestPath = resolve(import.meta.dirname, '../package.json');
+	const manifestPath = resolve(import.meta.dirname as string, '../package.json');
 	const fileContents = await readFile(manifestPath, 'utf8');
 	const { version } = JSON.parse(fileContents);
 
