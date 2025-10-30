@@ -25,6 +25,8 @@ describe('logger', () => {
 		{ method: 'debug', consoleMethod: 'debug', label: 'DEBUG' },
 		{ method: 'error', consoleMethod: 'error', label: 'ERROR' },
 		{ method: 'info', consoleMethod: 'info', label: 'INFO' },
+		{ method: 'log', consoleMethod: 'log', label: '' },
+		{ method: 'success', consoleMethod: 'log', label: 'SUCCESS' },
 		{ method: 'warn', consoleMethod: 'warn', label: 'WARN' },
 	] as const)('$method', ({ method, consoleMethod, label }) => {
 		it.each(testMessages)('should handle $description messages', ({ value }) => {
@@ -32,15 +34,6 @@ describe('logger', () => {
 
 			expect(console[consoleMethod]).toHaveBeenCalledTimes(1);
 			expect(console[consoleMethod]).toHaveBeenCalledWith(expect.stringContaining(label), value);
-		});
-	});
-
-	describe('success', () => {
-		it.each(testMessages)('should handle $description messages', ({ value }) => {
-			logger.success(value);
-
-			expect(console.log).toHaveBeenCalledTimes(1);
-			expect(console.log).toHaveBeenCalledWith(expect.stringContaining('SUCCESS'), value);
 		});
 	});
 
