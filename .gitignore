@@ -5,9 +5,8 @@ lib/
 .eslintcache
 
 # Development
-.esbuildrc
-.esbuildrc.*
-esbuild.config.*
+.env
+.env.*
 
 # Test
 coverage/
