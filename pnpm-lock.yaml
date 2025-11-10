@@ -28,8 +28,8 @@ importers:
         specifier: ^0.3.1
         version: 0.3.1(picomatch@4.0.3)
       '@idleberg/configs':
-        specifier: ^0.3.2
-        version: 0.3.2
+        specifier: ^0.3.3
+        version: 0.3.3
       '@types/node':
         specifier: ^24.10.0
         version: 24.10.0
@@ -601,8 +601,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@idleberg/configs@0.3.2':
-    resolution: {integrity: sha512-r2BcJLqBPdAmTRf4OvO5baa/2sgWGEqYORRgp/Pn1ddiXFv0wK/LAsf6YhDyWlAqArVB3SDImbQy7467h6pWzg==}
+  '@idleberg/configs@0.3.3':
+    resolution: {integrity: sha512-hb8FiaWFQ4a9ZF3NMQjmvgvAI/V0xjQtwheIRg4f5NRnCVfygL0MjFEP29AnGJu2rub2A5AemPiIWYnhwuRs+A==}
 
   '@inquirer/ansi@1.0.1':
     resolution: {integrity: sha512-yqq0aJW/5XPhi5xOAL1xRCpe1eh8UFVgYFpFsjEqmIR8rKLyP+HINvFXwUaxYICflJrVlxnp7lLN6As735kVpw==}
@@ -3656,7 +3656,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@idleberg/configs@0.3.2':
+  '@idleberg/configs@0.3.3':
     dependencies:
       '@biomejs/biome': 2.3.4
       '@total-typescript/tsconfig': 1.0.4
