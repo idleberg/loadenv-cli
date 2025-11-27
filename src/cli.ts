@@ -3,6 +3,10 @@ import { Command } from 'commander';
 import { logger } from './log.ts';
 import { getVersion } from './utils.ts';
 
+/**
+ * Handles parsing of CLI arguments.
+ * @internal
+ */
 export async function handleCli() {
 	const program = new Command('loadenv');
 

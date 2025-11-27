@@ -6,6 +6,10 @@ import type { OptionValues } from 'commander';
 import { loadEnv } from 'vite';
 import { logger } from './log.ts';
 
+/**
+ * Loads version from package manifest.
+ * @internal
+ */
 export async function getVersion(): Promise<string> {
 	const manifestPath = resolve(import.meta.dirname as string, '../package.json');
 	const fileContents = await readFile(manifestPath, 'utf8');
@@ -14,6 +18,10 @@ export async function getVersion(): Promise<string> {
 	return version ?? 'development';
 }
 
+/**
+ * Spawns a process with environment variables loaded by `loadEnv`.
+ * @internal
+ */
 export function spawnProcess(command: string, args: string[] = [], options: OptionValues = {}) {
 	const resolvedEnvDir = resolve(options.envdir);
 	const env = loadEnv(options.mode, resolvedEnvDir, options.prefix);

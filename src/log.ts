@@ -1,5 +1,9 @@
 import { bgBlue, bgCyan, bgGreen, bgRed, bgYellow } from 'kleur/colors';
 
+/**
+ * Styles logging messages with colored prefixes.
+ * @internal
+ */
 export const logger = {
 	debug: (...args: unknown[]) => console.debug(bgCyan(' DEBUG '), ...args),
 	error: (...args: unknown[]) => console.error(bgRed(' ERROR '), ...args),
