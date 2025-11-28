@@ -37,7 +37,7 @@ npx loadenv --mode production -- playwright test
 npx loadenv --mode production --prefix VITE_ -- playwright test
 
 # Pass arguments to Playwright
-npx loadenv --mode production --prefix VITE_ -- playwright test -- --ui
+npx loadenv --mode production --prefix VITE_ -- playwright test --ui
 ```
 
 See `loadenv --help` for all available options.
