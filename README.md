@@ -49,7 +49,7 @@ For ease of use, it's recommended to create tasks in your `deno.json` file:
 > [!WARNING]
 > The following example is a simplied for brevity. You likely want to define fine-grained permissions according to your needs.
 
-**Example*
+**Example**
 
 ```json
 {
