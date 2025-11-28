@@ -7,10 +7,10 @@ import { spawnProcess } from './utils.ts';
 
 const { command, commandArgs, options } = await handleCli();
 
-if (process.env.MODE === options.mode) {
+if (options.mode === '') {
+	logger.warn('The provided mode is empty, this might lead to unintentional behaviour.');
+} else if (process.env.MODE === options.mode) {
 	logger.info(`Mode "${process.env.MODE}" has been derived from environment.`);
-} else if (options.mode === '') {
-	logger.warn('The provided mode is empty, this might lead to unintended behaviour.');
 }
 
 if (options.debug) {

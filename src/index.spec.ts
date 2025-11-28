@@ -108,7 +108,7 @@ describe('index', () => {
 
 		await import('./index.ts');
 
-		expect(logger.warn).toHaveBeenCalledWith('The provided mode is empty, this might lead to unintended behaviour.');
+		expect(logger.warn).toHaveBeenCalledWith('The provided mode is empty, this might lead to unintentional behaviour.');
 	});
 
 	it('should log debug information when debug flag is enabled', async () => {
