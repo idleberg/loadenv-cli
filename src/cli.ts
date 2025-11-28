@@ -18,7 +18,7 @@ export async function handleCli() {
 		})
 		.arguments('<command> [args...]')
 		.optionsGroup('loadEnv API')
-		.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file', process.env.MODE)
+		.requiredOption('-m, --mode <string>', 'a Vite mode to determine .env file', process.env.MODE ?? undefined)
 		.option('-e, --envdir <string>', 'directory to load .env from', process.cwd())
 		.option('-p, --prefix <string...>', 'filter environment variables by prefix', '')
 		.optionsGroup('Advanced Options')

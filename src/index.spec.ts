@@ -10,6 +10,7 @@ vi.mock('./log.ts', () => ({
 	logger: {
 		info: vi.fn(),
 		debug: vi.fn(),
+		warn: vi.fn(),
 	},
 }));
 
@@ -51,6 +52,7 @@ describe('index', () => {
 		expect(spawnProcess).toHaveBeenCalledOnce();
 		expect(spawnProcess).toHaveBeenCalledWith(mockCommand, mockArgs, mockOptions);
 		expect(logger.info).not.toHaveBeenCalled();
+		expect(logger.warn).not.toHaveBeenCalled();
 		expect(logger.debug).not.toHaveBeenCalled();
 	});
 
@@ -70,7 +72,7 @@ describe('index', () => {
 
 		await import('./index.ts');
 
-		expect(logger.info).toHaveBeenCalledWith('Mode has been derived from environment.');
+		expect(logger.info).toHaveBeenCalledWith('Mode "staging" has been derived from environment.');
 	});
 
 	it('should not log info when MODE differs from options.mode', async () => {
@@ -90,6 +92,23 @@ describe('index', () => {
 		await import('./index.ts');
 
 		expect(logger.info).not.toHaveBeenCalled();
+	});
+
+	it('should log warning when mode is empty string', async () => {
+		const mockOptions = { mode: '', debug: false };
+
+		const { handleCli } = await import('./cli.ts');
+		const { logger } = await import('./log.ts');
+
+		vi.mocked(handleCli).mockResolvedValue({
+			command: 'echo',
+			commandArgs: ['test'],
+			options: mockOptions,
+		});
+
+		await import('./index.ts');
+
+		expect(logger.warn).toHaveBeenCalledWith('The provided mode is empty, this might lead to unintended behaviour.');
 	});
 
 	it('should log debug information when debug flag is enabled', async () => {
@@ -150,7 +169,7 @@ describe('index', () => {
 
 		await import('./index.ts');
 
-		expect(logger.info).toHaveBeenCalledWith('Mode has been derived from environment.');
+		expect(logger.info).toHaveBeenCalledWith('Mode "test" has been derived from environment.');
 		expect(logger.debug).toHaveBeenCalledWith('CLI', {
 			command: mockCommand,
 			args: mockArgs,
@@ -165,7 +184,6 @@ describe('index', () => {
 		const { spawnProcess } = await import('./utils.ts');
 
 		vi.mocked(handleCli).mockResolvedValue({
-			// @ts-expect-error Testing undefined command
 			command: undefined,
 			commandArgs: [],
 			options: mockOptions,
