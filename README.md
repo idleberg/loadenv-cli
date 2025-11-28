@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/github/license/idleberg/loadenv-cli?color=blue&style=for-the-badge)](https://github.com/idleberg/loadenv-cli/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/loadenv-cli?style=for-the-badge)](https://www.npmjs.org/package/loadenv-cli)
-[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/load-env?style=for-the-badge)](https://jsr.io/@idleberg/load-env)
+[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/loadenv-cli?style=for-the-badge)](https://jsr.io/@idleberg/loadenv-cli)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/loadenv-cli/main?style=for-the-badge)
 
 Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child-process with access to those environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
