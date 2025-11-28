@@ -4,7 +4,6 @@
 
 [![License](https://img.shields.io/github/license/idleberg/loadenv-cli?color=blue&style=for-the-badge)](https://github.com/idleberg/loadenv-cli/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/loadenv-cli?style=for-the-badge)](https://www.npmjs.org/package/loadenv-cli)
-[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/loadenv-cli?style=for-the-badge)](https://jsr.io/@idleberg/loadenv-cli)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/loadenv-cli/main?style=for-the-badge)
 
 Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child-process with access to those environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
@@ -18,11 +17,7 @@ Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv)
 ## Installation 💿
 
 ```shell
-# npm
 npm install loadenv-cli
-
-# JSR
-deno add jsr:@idleberg/loadenv-cli
 ```
 
 ## Usage 🚀
@@ -53,6 +48,8 @@ For ease of use, it's recommended to create tasks in your `deno.json` file:
 
 > [!WARNING]
 > The following example is a simplied for brevity. You likely want to define fine-grained permissions according to your needs.
+
+**Example*
 
 ```json
 {
