@@ -49,12 +49,12 @@ See `loadenv --help` for all available options.
 For ease of use, it's recommended to create tasks in your `deno.json` file:
 
 > [!WARNING]
-> The following example is a simplied example. You likely want to define fine-grained permissions according to your needs.
+> The following example is a simplied for brevity. You likely want to define fine-grained permissions according to your needs.
 
 ```json
 {
 	"tasks": {
-		"test": "deno run -A='dist' jsr:@idleberg/loadenv-cli --mode production npm:playwright test"
+		"test": "deno run -A jsr:@idleberg/loadenv-cli --mode production npm:playwright test"
 	}
 }
 ```
