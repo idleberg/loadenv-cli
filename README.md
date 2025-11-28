@@ -18,7 +18,11 @@ Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv)
 ## Installation 💿
 
 ```shell
+# npm
 npm install loadenv-cli
+
+# JSR
+deno add jsr:@idleberg/loadenv-cli
 ```
 
 ## Usage 🚀
