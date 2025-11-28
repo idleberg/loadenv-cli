@@ -25,20 +25,39 @@ npm install loadenv-cli
 > [!NOTE]
 > Before you read on, make sure you have a basic understanding of Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html).
 
+### Node.js
+
 **Examples**
 
 ```sh
 # Use production .env with Playwright
-npx loadenv --mode production playwright test
+npx loadenv --mode production -- playwright test
 
 # Only pass prefixed environment variables
-npx loadenv --mode production --prefix VITE_ playwright test
+npx loadenv --mode production --prefix VITE_ -- playwright test
 
 # Pass arguments to Playwright
-npx loadenv --mode production --prefix VITE_ playwright test -- --ui
+npx loadenv --mode production --prefix VITE_ -- playwright test -- --ui
 ```
 
 See `loadenv --help` for all available options.
+
+### Deno
+
+#### Deno
+
+For ease of use, it's recommended to create tasks in your `deno.json` file:
+
+> [!WARNING]
+> The following example is a simplied example. You likely want to define fine-grained permissions according to your needs.
+
+```json
+{
+	"tasks": {
+		"test": "deno run -A='dist' jsr:@idleberg/loadenv-cli --mode production npm:playwright test"
+	}
+}
+```
 
 ## Related 👫
 
