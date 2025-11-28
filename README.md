@@ -44,8 +44,6 @@ See `loadenv --help` for all available options.
 
 ### Deno
 
-#### Deno
-
 For ease of use, it's recommended to create tasks in your `deno.json` file:
 
 > [!WARNING]
