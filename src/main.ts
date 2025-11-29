@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import process from 'node:process';
 import { handleCli } from './cli.ts';
 import { logger } from './log.ts';

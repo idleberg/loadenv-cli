@@ -16,7 +16,7 @@
 	],
 	"type": "module",
 	"bin": {
-		"loadenv": "./bin/index.mjs"
+		"loadenv": "./bin/node.mjs"
 	},
 	"engines": {
 		"node": ">=22"

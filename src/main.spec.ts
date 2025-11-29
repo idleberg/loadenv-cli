@@ -46,7 +46,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(handleCli).toHaveBeenCalledOnce();
 		expect(spawnProcess).toHaveBeenCalledOnce();
@@ -70,7 +70,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.info).toHaveBeenCalledWith('Mode "staging" has been derived from environment.');
 	});
@@ -89,7 +89,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.info).not.toHaveBeenCalled();
 	});
@@ -106,7 +106,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.warn).toHaveBeenCalledWith('The provided mode is empty, this might lead to unintentional behaviour.');
 	});
@@ -125,7 +125,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.debug).toHaveBeenCalledWith('CLI', {
 			command: mockCommand,
@@ -146,7 +146,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.debug).not.toHaveBeenCalled();
 	});
@@ -167,7 +167,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(logger.info).toHaveBeenCalledWith('Mode "test" has been derived from environment.');
 		expect(logger.debug).toHaveBeenCalledWith('CLI', {
@@ -189,7 +189,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(spawnProcess).toHaveBeenCalledWith(undefined, [], mockOptions);
 	});
@@ -207,7 +207,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(spawnProcess).toHaveBeenCalledWith(mockCommand, [], mockOptions);
 	});
@@ -230,7 +230,7 @@ describe('index', () => {
 			options: mockOptions,
 		});
 
-		await import('./index.ts');
+		await import('./main.ts');
 
 		expect(spawnProcess).toHaveBeenCalledWith('echo', ['test'], mockOptions);
 	});
