@@ -11,7 +11,8 @@ import { logger } from './log.ts';
  * @internal
  */
 export async function getVersion(): Promise<string> {
-	const manifestPath = resolve(import.meta.dirname as string, '../package.json');
+	const manifestName = 'Deno' in globalThis ? 'jsr.jsonc' : 'package.json';
+	const manifestPath = resolve(import.meta.dirname as string, `../${manifestName}`);
 	const fileContents = await readFile(manifestPath, 'utf8');
 	const { version } = JSON.parse(fileContents);
 
