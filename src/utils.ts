@@ -10,7 +10,9 @@ import { logger } from './log.ts';
  * @internal
  */
 export async function getVersion(): Promise<string> {
-	const module = 'Deno' in globalThis ? await loadJsrManifest() : await loadNpmManifest();
+	const module = await import('../package.json', {
+		with: { type: 'json' },
+	});
 
 	return module.default.version ?? 'development';
 }
@@ -64,16 +66,4 @@ export function spawnProcess(command: string, args: string[] = [], options: Opti
 			child.kill(signal);
 		});
 	}
-}
-
-async function loadJsrManifest() {
-	return import('../jsr.json', {
-		with: { type: 'json' },
-	});
-}
-
-async function loadNpmManifest() {
-	return import('../package.json', {
-		with: { type: 'json' },
-	});
 }
