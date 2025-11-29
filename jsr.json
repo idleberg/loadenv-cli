@@ -7,8 +7,8 @@
 		"include": [
 			"jsr.json",
 			"LICENSE",
-			"README.md",
 			"package.json",
+			"README.md",
 			"src/*",
 			"!src/*.spec.ts"
 		]
