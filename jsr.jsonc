@@ -4,7 +4,14 @@
 	"license": "MIT",
 	"exports": "./src/deno.ts",
 	"publish": {
-		"include": ["jsr.json", "LICENSE", "README.md", "src/*", "!src/*.spec.ts"]
+		"include": [
+			"jsr.jsonc",
+			"LICENSE",
+			"README.md",
+			"package.json",
+			"src/*",
+			"!src/*.spec.ts"
+		]
 	},
 	"compilerOptions": {}
 }
