@@ -8,6 +8,7 @@ export default defineConfig((options) => {
 		clean: isProduction,
 		dts: isProduction,
 		entry: 'src/node.ts',
+		external: ['../jsr.json', '../package.json'],
 		format: 'esm',
 		minify: isProduction,
 		outDir: 'bin',

@@ -1,5 +1,4 @@
 import { spawn } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import process from 'node:process';
 import type { OptionValues } from 'commander';
@@ -11,12 +10,9 @@ import { logger } from './log.ts';
  * @internal
  */
 export async function getVersion(): Promise<string> {
-	const manifestName = 'Deno' in globalThis ? 'jsr.json' : 'package.json';
-	const manifestPath = resolve(import.meta.dirname as string, `../${manifestName}`);
-	const fileContents = await readFile(manifestPath, 'utf8');
-	const { version } = JSON.parse(fileContents);
+	const module = 'Deno' in globalThis ? await loadJsrManifest() : await loadNpmManifest();
 
-	return version ?? 'development';
+	return module.default.version ?? 'development';
 }
 
 /**
@@ -68,4 +64,16 @@ export function spawnProcess(command: string, args: string[] = [], options: Opti
 			child.kill(signal);
 		});
 	}
+}
+
+async function loadJsrManifest() {
+	return import('../jsr.json', {
+		with: { type: 'json' },
+	});
+}
+
+async function loadNpmManifest() {
+	return import('../package.json', {
+		with: { type: 'json' },
+	});
 }
