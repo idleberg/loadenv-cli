@@ -5,7 +5,7 @@
 	"exports": "./src/deno.ts",
 	"publish": {
 		"include": [
-			"jsr.jsonc",
+			"jsr.json",
 			"LICENSE",
 			"README.md",
 			"package.json",
