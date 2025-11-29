@@ -10,6 +10,7 @@ import { logger } from './log.ts';
  * @internal
  */
 export async function getVersion(): Promise<string> {
+	// The JSR package will only contain jsr.json, hence this unfortunate differentation is required.
 	const module = 'Deno' in globalThis ? await loadJsrManifest() : await loadNpmManifest();
 
 	return module.default.version ?? 'development';
