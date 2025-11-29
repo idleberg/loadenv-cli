@@ -8,7 +8,11 @@ export default defineConfig((options) => {
 		clean: isProduction,
 		dts: isProduction,
 		entry: 'src/node.ts',
-		external: ['../jsr.json', '../package.json'],
+		external: [
+			// ensure we always read the current version from the manifests
+			'../jsr.json',
+			'../package.json',
+		],
 		format: 'esm',
 		minify: isProduction,
 		outDir: 'bin',
