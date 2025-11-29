@@ -1,6 +1,6 @@
 {
 	"name": "@idleberg/loadenv-cli",
-	"version": "0.4.5",
+	"version": "0.4.6",
 	"license": "MIT",
 	"exports": "./src/deno.ts",
 	"publish": {
