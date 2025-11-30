@@ -19,7 +19,7 @@
 		"loadenv": "./bin/node.mjs"
 	},
 	"engines": {
-		"node": ">=22"
+		"node": "^20.19.0 || >=22.12.0"
 	},
 	"files": [
 		"bin/",
