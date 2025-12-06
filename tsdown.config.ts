@@ -7,7 +7,7 @@ export default defineConfig((options) => {
 		target: 'node20',
 		clean: isProduction,
 		dts: isProduction,
-		entry: 'src/node.ts',
+		entry: 'src/index.node.ts',
 		external: [
 			// ensure we always read the current version from the manifests
 			'../jsr.json',

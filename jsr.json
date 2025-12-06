@@ -2,7 +2,7 @@
 	"name": "@idleberg/loadenv-cli",
 	"version": "0.4.7",
 	"license": "MIT",
-	"exports": "./src/deno.ts",
+	"exports": "./src/index.deno.ts",
 	"publish": {
 		"include": [
 			"jsr.json",
