@@ -47,6 +47,10 @@ npx loadenv --mode production --prefix VITE_ playwright test -- --ui
 
 See `loadenv --help` for all available options.
 
+### Bun
+
+All of the Node.js examples are valid as long as you substitute `npx` with `bunx`.
+
 ### Deno
 
 For ease of use, it's recommended to create tasks in your `deno.json` file:
