@@ -16,7 +16,7 @@
 	],
 	"type": "module",
 	"bin": {
-		"loadenv": "./bin/index.node.mjs"
+		"loadenv": "./bin/cli.mjs"
 	},
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
