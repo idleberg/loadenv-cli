@@ -4,19 +4,13 @@ on:
   push:
     paths:
       - ".github/workflows/bun.yml"
+      - "e2e/**"
       - "src/**"
-      - "tests/**"
       - "types/**"
       - "package.json"
       - "pnpm-lock.yaml"
+      - "vitest.config.ts"
   pull_request:
-    paths:
-      - ".github/workflows/bun.yml"
-      - "src/**"
-      - "tests/**"
-      - "types/**"
-      - "package.json"
-      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 jobs:
