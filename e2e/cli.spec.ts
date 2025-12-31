@@ -12,8 +12,10 @@ const execFileAsync = promisify(execFile);
  */
 function parseJsonOutput(stdout: string): unknown {
 	const lines = stdout.trim().split('\n');
+
 	// Get the last non-empty line which should be the JSON output
 	const jsonLine = lines.filter((line) => line.trim()).pop() || '';
+
 	return JSON.parse(jsonLine);
 }
 
@@ -27,30 +29,22 @@ describe('CLI Usage', () => {
 	const nodePath = process.execPath;
 
 	beforeAll(async () => {
-		// Create test env directory
 		await mkdir(testEnvDir, { recursive: true });
 
-		// Create .env.production
 		await writeFile(join(testEnvDir, '.env.production'), 'VITE_API_URL=https://prod.api.com\nVITE_MODE=production\n');
 
-		// Create .env.development
 		await writeFile(join(testEnvDir, '.env.development'), 'VITE_API_URL=https://dev.api.com\nVITE_MODE=development\n');
 
-		// Create .env.test with mixed prefixes
 		await writeFile(join(testEnvDir, '.env.test'), 'VITE_FOO=bar\nPUBLIC_BAZ=qux\nSECRET=hidden\n');
 
-		// Create .env.staging for variable expansion test
 		await writeFile(join(testEnvDir, '.env.staging'), 'BASE_PORT=3000\nEXPANDED_PORT=http://localhost:${BASE_PORT}\n');
 
-		// Create .env (base file) - Note: Vite only loads vars with prefix by default
 		await writeFile(join(testEnvDir, '.env'), 'VITE_BASE=always-loaded\n');
 
-		// Create .env.cascade for testing cascading
 		await writeFile(join(testEnvDir, '.env.cascade'), 'VITE_API_URL=from-cascade\nVITE_OVERRIDE=from-mode\n');
 	});
 
 	afterAll(async () => {
-		// Clean up test env directory
 		await rm(testEnvDir, { recursive: true, force: true });
 	});
 
