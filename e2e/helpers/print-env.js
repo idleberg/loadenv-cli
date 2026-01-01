@@ -2,7 +2,6 @@
 
 import process from 'node:process';
 
-// Helper script for E2E tests - prints specific env vars as JSON
 const envVars = {
 	VITE_API_URL: process.env.VITE_API_URL,
 	VITE_MODE: process.env.VITE_MODE,
