@@ -23,9 +23,9 @@ describe('CLI Usage', () => {
 	const helpersDir = join(__dirname, 'helpers');
 	const testEnvDir = join(helpersDir, 'env');
 	const cliPath = join(__dirname, '../bin/cli.mjs');
-	const printEnvScript = join(helpersDir, 'print-env.js');
-	const exitCodeScript = join(helpersDir, 'exit-code.js');
-	const echoArgsScript = join(helpersDir, 'echo-args.js');
+	const printEnvScript = join(helpersDir, 'print-env.ts');
+	const exitCodeScript = join(helpersDir, 'exit-code.ts');
+	const echoArgsScript = join(helpersDir, 'echo-args.ts');
 	const nodePath = process.execPath;
 
 	beforeAll(async () => {
