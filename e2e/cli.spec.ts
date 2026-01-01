@@ -37,6 +37,7 @@ describe('CLI Usage', () => {
 
 		await writeFile(join(testEnvDir, '.env.test'), 'VITE_FOO=bar\nPUBLIC_BAZ=qux\nSECRET=hidden\n');
 
+		// biome-ignore lint/suspicious/noTemplateCurlyInString: dotenv expansion test
 		await writeFile(join(testEnvDir, '.env.staging'), 'BASE_PORT=3000\nEXPANDED_PORT=http://localhost:${BASE_PORT}\n');
 
 		await writeFile(join(testEnvDir, '.env'), 'VITE_BASE=always-loaded\n');
