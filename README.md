@@ -28,6 +28,7 @@ deno add jsr:@idleberg/loadenv-cli
 ## Usage 🚀
 
 > [!NOTE]
+> 
 > Before you read on, make sure you have a basic understanding of Vite's concept of [Environment Variables and Modes](https://vite.dev/guide/env-and-mode.html).
 
 ### Node.js
@@ -56,6 +57,7 @@ All of the Node.js examples are valid as long as you substitute `npx` with `bunx
 For ease of use, it's recommended to create tasks in your `deno.json` file:
 
 > [!WARNING]
+> 
 > The following example is a simplied for brevity. You likely want to define fine-grained permissions according to your needs.
 
 **Example**
