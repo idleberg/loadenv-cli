@@ -11,7 +11,7 @@ Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv)
 
 **Features**
 
-- loads `.env` relevant to mode
+- loads `.env` matching the specicied mode
 - filters prefixed environment variables, e.g. `VITE_`
 - expands environment variables
 
