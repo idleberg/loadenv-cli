@@ -37,13 +37,10 @@ deno add jsr:@idleberg/loadenv-cli
 
 ```sh
 # Use production .env with Playwright
-npx loadenv --mode production playwright test
+npx loadenv --mode production -- playwright test
 
 # Only pass prefixed environment variables
-npx loadenv --mode production --prefix VITE_ playwright test
-
-# Pass arguments to Playwright
-npx loadenv --mode production --prefix VITE_ playwright test -- --ui
+npx loadenv --mode production --prefix VITE_ -- playwright test
 ```
 
 See `loadenv --help` for all available options.
@@ -65,7 +62,7 @@ For ease of use, it's recommended to create tasks in your `deno.json` file:
 ```json
 {
 	"tasks": {
-		"test": "deno run -A jsr:@idleberg/loadenv-cli --mode production npm:playwright test"
+		"test": "deno run -A jsr:@idleberg/loadenv-cli --mode production -- npm:playwright test"
 	}
 }
 ```
