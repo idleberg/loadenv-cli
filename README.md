@@ -7,11 +7,11 @@
 [![Version: jsr](https://img.shields.io/jsr/v/@idleberg/loadenv-cli?style=for-the-badge)](https://jsr.io/@idleberg/loadenv-cli)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/loadenv-cli/main?style=for-the-badge)
 
-Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child-process with access to the exposed environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
+Utilizing Vite's [`loadEnv`](https://vite.dev/guide/api-javascript.html#loadenv) function, this CLI tool loads `.env` files and spawns a child process with access to the exposed environment variables. This is useful when you want to adopt Vite's mode handling with other tools.
 
 **Features**
 
-- loads `.env` matching the specicied mode
+- loads `.env` matching the specified mode
 - filters prefixed environment variables, e.g. `VITE_`
 - expands environment variables
 
@@ -58,7 +58,7 @@ For ease of use, it's recommended to create tasks in your `deno.json` file:
 
 > [!WARNING]
 > 
-> The following example is a simplied for brevity. You likely want to define fine-grained permissions according to your needs.
+> The following example is simplified for brevity. You likely want to define fine-grained permissions according to your needs.
 
 **Example**
 
