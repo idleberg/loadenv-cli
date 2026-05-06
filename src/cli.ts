@@ -28,6 +28,11 @@ export async function handleCli() {
 		// This is required to pass on unknown options to the spawned process.
 		.allowUnknownOption(true);
 
+	if (process.argv.length <= 2) {
+		program.outputHelp();
+		process.exit(0);
+	}
+
 	program.parse();
 
 	const [command, ...commandArgs] = program.args;

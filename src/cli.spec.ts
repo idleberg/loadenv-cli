@@ -143,8 +143,8 @@ describe('handleCli', () => {
 		exitSpy.mockRestore();
 	});
 
-	it('should use logger.error for error messages', async () => {
-		process.argv = ['node', 'loadenv']; // Missing required command
+	it('should output help and exit when no arguments are provided', async () => {
+		process.argv = ['node', 'loadenv'];
 		const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
 
 		const { handleCli } = await import('./cli.ts');
@@ -152,10 +152,11 @@ describe('handleCli', () => {
 		try {
 			await handleCli();
 		} catch {
-			// Commander calls process.exit on error
+			// process.exit is mocked
 		}
 
-		expect(logger.error).toHaveBeenCalled();
+		expect(logger.log).toHaveBeenCalledWith(expect.stringContaining('Usage:'));
+		expect(exitSpy).toHaveBeenCalledWith(0);
 		exitSpy.mockRestore();
 	});
 });
