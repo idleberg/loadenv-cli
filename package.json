@@ -31,7 +31,7 @@
 		"dev": "tsdown --watch",
 		"lint": "concurrently --prefix-colors blue,green,magenta npm:lint:*",
 		"lint:biome": "biome check",
-		"lint:e18e": "e18e-cli analyze",
+		"lint:e18e": "e18e-cli analyze --log-level error",
 		"prepack": "npm run build",
 		"publish:jsr": "deno publish",
 		"publish:npm": "np",
