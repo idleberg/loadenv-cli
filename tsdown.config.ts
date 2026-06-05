@@ -6,15 +6,17 @@ export default defineConfig((options) => {
 	return {
 		target: 'node20',
 		clean: isProduction,
+		deps: {
+			neverBundle: [
+				// ensure we always read the current version from the manifests
+				'../jsr.json',
+				'../package.json',
+			],
+		},
 		dts: isProduction,
 		entry: {
 			cli: 'src/index.node.ts',
 		},
-		external: [
-			// ensure we always read the current version from the manifests
-			'../jsr.json',
-			'../package.json',
-		],
 		format: 'esm',
 		minify: isProduction,
 		outDir: 'bin',
