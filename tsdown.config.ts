@@ -4,7 +4,7 @@ export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
 
 	return {
-		target: 'node20',
+		target: 'node22',
 		clean: isProduction,
 		deps: {
 			neverBundle: [
