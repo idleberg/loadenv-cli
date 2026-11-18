@@ -47,11 +47,11 @@
 		"@commitlint/config-conventional": "^21.2.4",
 		"@idleberg/configs": "^0.4.6",
 		"@types/node": "^26.6.6",
-		"@vitest/coverage-v8": "^4.1.10",
+		"@vitest/coverage-v8": "^5.1.1",
 		"concurrently": "^10.0.7",
 		"np": "^12.1.1",
 		"tsdown": "^0.23.7",
-		"vitest": "^4.1.10"
+		"vitest": "^5.1.1"
 	},
 	"packageManager": "pnpm@11.13.1+sha512.b2fc7683b8a6525414e7d13e1ba28caaddde96bf66ec540bfaeb7e702b81f3e0be4d1f295edf7f9fe0396740a8dce4509c582ddf79891f4543fea32d37645f25"
 }
